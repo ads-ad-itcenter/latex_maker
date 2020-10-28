@@ -1,0 +1,133 @@
+\documentclass[uplatex, a4paper,twocolumn, 14pt]{jsarticle}
+
+\usepackage{cite} % bibtex用パッケージ
+\usepackage{amsmath} %米国数学会パッケージ, 数式表現を強化する
+\usepackage{abstract} %abstract作成用拡張パッケージ
+\usepackage{authblk} %titleに所属を表示できるようになる
+\usepackage[dvipdfmx]{graphicx} % 図の挿入
+\usepackage[top=1.5cm,bottom=2cm,left=2cm,right=2cm]{geometry} %余白調整
+\usepackage{titlesec} %見出し変更パッケージ
+\usepackage{url} %urlに専用フォントスタイルとリンク追加
+\usepackage[dvipdfmx]{hyperref} %ハイパーリンク生成
+\usepackage{pxjahyper} %ハイパーリンク生成
+\usepackage{lmodern}  % Latine Modern 欧文フォントの見栄えを安定化
+\usepackage{secdot} % sectionのピリオドをカスタマイズ
+
+% 著者表示をきれいに
+\renewcommand\Authsep{\quad}
+\renewcommand\Authand{\quad}
+\renewcommand\Authands{\quad}
+
+\begin{document}
+% タイトル定義
+\title{ここにタイトルを書く}
+% % 著者(単独)
+% \author{国立太郎}
+% % 所属(単独)
+% \affil{某国立大学}
+% 著者(複数人)
+\author[1]{国立太郎}
+\author[2]{私立一郎}
+\author[1]{国立次郎}
+% 所属(複数人)
+\affil[1]{某国立大学}
+\affil[2]{某私立大学}
+\date{} %日付非表示
+
+% 概要
+\twocolumn[
+    \maketitle % タイトルを表示
+    \begin{abstract}
+        {\normalsize
+            イエネコは、肉食性の小型哺乳類である。
+            リビアヤマネコが家畜化した種のことを指し、通称として``猫''と呼ばれる。
+            ペットとして人に人気があり、その人気から品種は約60種が確認されている。
+            
+            本論文ではこの生態と、LaTeXの書き方を示し、論文作成の際のテンプレートになることを目的とする。
+            \par
+        }
+    \end{abstract}
+    \vspace{1cm}%下との間隔をもう少し取る。
+]
+
+
+
+
+\section{文章}
+
+ここの文章を書き直すことで、本文を書くことができる。
+の本文では改行は無視される。
+したがって、この文は前2つの文と改行無しでつながって出力される。
+
+段落を分けるには、改行を2つ挟むことでこのように段落分けができる。
+
+\subsection{章立てとラベル付け \label{sec:aaa}}
+
+\verb|\section{節名}|, \verb|\subsection{小節名}|, \verb|\subsubsection{小々節名}|と書くことで節、小節、小々節を設定できる。
+
+また、\verb|\section{節名 \label{sec:aaa}}|などと書くことで、\verb|sec:aaa|という名前でラベル付けする事ができる。
+付けたラベルは\verb|\ref{sec:aaa}|などと書くことで、「\ref{sec:aaa}節」のように動的に節番号を取得することができる。
+加えて、図番号や式番号にもラベル付けを行うことができる。
+詳細は\ref{sec:graph}節, \ref{sec:equation}節で解説する。
+
+\subsection{フッターの設定}
+このように\footnote{aaa}書くことでフッターを設定できる。
+
+% TODO: urlの話
+% TODO: 参考文献の話
+
+
+\section{図と表}
+
+\subsection{図 \label{sec:graph}}
+
+このように書くことで、図を挿入できる。
+\verb|graphics/cat.jpg|を差し替えることでファイルパスを変更できる。
+大きさの調整、キャプションの入力、ラベルの設定ができる。
+設定したラベルは「図\ref{graph:cat}」のように引用することができる。
+
+\begin{figure}[tbh]
+    \begin{center}
+        \includegraphics[width=8cm]{graphics/cat.jpg}
+        \caption{
+            地元を歩いていたときに見かけた猫。
+        }
+        \label{graph:cat}
+    \end{center}
+\end{figure}
+
+% TODO: pdfの話
+% TODO: プログラムコードの話
+
+\subsection{表}
+次のように書くと、猫の生態を表で表せる。
+\verb+|c|r+の部分を編集すると、区切りの線や中央・左右揃えを設定できる。
+
+\begin{table}[tbh]
+    \begin{center}
+        \begin{tabular}{|c|r}
+            体温 & 38.6 °C \\
+            心拍数 & 120–140 毎分間の拍動の数 \\
+            呼吸数 & 16–40 毎分呼吸
+        \end{tabular}
+        \caption{猫の生態\cite{kahn2007merck}}
+        \label{tab:table-name}
+    \end{center}
+\end{table}
+
+\section{数式 \label{sec:equation}}
+
+LaTeXは科学論文に用いられているという背景から、数式の表示には豊富な機能を持っている。
+式(\ref{eq:example1}), (\ref{eq:example2})はその一例である。
+\begin{equation} \label{eq:example1}
+    e^{i \theta} = \cos{\theta} + i \sin{\theta}
+\end{equation}
+\begin{equation} \label{eq:example2}
+    \cos{x} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots
+\end{equation}
+
+% bibファイル読み込み & Reference表示
+\bibliography{reference.bib}{}
+\bibliographystyle{junsrt}
+
+\end{document}

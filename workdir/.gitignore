@@ -1,0 +1,15 @@
+.vscode
+.latexmkrc
+
+*.aux
+*.dvi
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.log
+*.bbl
+*.blg
+*.pdf
+*.out
+
+!graphics/*

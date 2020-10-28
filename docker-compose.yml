@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+    latex_maker:
+      build:
+        context: ./
+        dockerfile: Dockerfile
+      image: latex_maker
+      environment:
+        SHELL: "/bin/bash"
+      volumes:
+        - ./workdir:/repository/workdir
+        - ./.setting/.vscode:/repository/workdir/.vscode
+        - ./.setting/.latexmkrc:/repository/workdir/.latexmkrc
+      working_dir: /repository/workdir
+      tty: true

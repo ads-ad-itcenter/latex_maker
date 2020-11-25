@@ -2,10 +2,7 @@ version: '3.7'
 
 services:
     latex_maker:
-      build:
-        context: ./
-        dockerfile: Dockerfile
-      image: latex_maker
+      image: docker.pkg.github.com/ads-ad-itcenter/latex_maker/latex_maker
       environment:
         SHELL: "/bin/bash"
       volumes:

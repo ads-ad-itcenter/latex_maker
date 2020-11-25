@@ -43,3 +43,7 @@
 
 ## vscodeを使わない場合
 直下の `build_pdf.bat` を実行することで、`workdir/main.tex` をもとに `workdir/main.pdf` にpdfが出力されます。
+
+## 参考
+* https://qiita.com/popunbom/items/7d02fc75ad23b735d28c
+* https://korosuke613.hatenablog.com/entry/2019/06/24/171246

@@ -8,10 +8,10 @@
 
 ### 環境準備
 
-1. dockerイメージのbuild
+1. dockerイメージのpull
     ```sh
     cd このディレクトリのパス
-    docker-compose build
+    docker-compose pull
     ```
 
 2. vscodeの拡張機能をインストール

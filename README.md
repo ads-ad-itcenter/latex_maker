@@ -35,8 +35,11 @@
    * 1. vscode で `Ctrl` + `Shift` + `P` でコマンドパレットを開く
      2. 「>containers reopen」などと打ち込んで候補に出る「Remote-Containers: Reopen in Container」を選択
 
-### 使い方
-1. texファイル(サンプル: main.tex)を開く
+### 使用手順
+1. texファイル(サンプル: `workdir/main.tex` )を開く
 2. * texファイル上書き: 自動コンパイル
    * `Ctrl` + `Alt` + `B`: 手動コンパイル
    * `Ctrl` + `Alt` + `V`: プレビュー
+
+## vscodeを使わない場合
+直下の `build_pdf.bat` を実行することで、`workdir/main.tex` をもとに `workdir/main.pdf` にpdfが出力されます。

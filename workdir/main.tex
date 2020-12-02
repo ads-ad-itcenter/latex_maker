@@ -114,7 +114,11 @@
 \end{figure}
 
 また、図\ref{graph:cat_curve}のようにpdfファイルを読み込むことが可能である。
-グラフを表示するときには、pngやjpgといったラスタ形式より、pdfやepsといったベクタ形式を利用するのが好ましい。
+グラフを表示するときには、pngやjpgといったラスタ形式より、pdfやepsといったベクタ形式を利用する方が、拡大・縮小した時に美麗に表示されるため好ましい。
+
+なお、pdfファイルのトリミングにはGPLライセンスで公開されているソフトウェア『Briss\footnote{\url{http://briss.sourceforge.net/}}』が使いやすい。
+ベクタファイルを高度に編集したい場合は、GNUv2ライセンスで公開されているソフトウェア『Inkscape\footnote{\url{https://inkscape.org/}}』
+や持っている場合は有償の『Adobe Illustrator\footnote{\url{https://www.adobe.com/jp/products/illustrator.html}}』を使うとよい。
 
 \begin{figure}[tbh]
     \begin{center}
@@ -225,6 +229,12 @@ BiBTeXで扱える文献の種類は、\href{https://ja.wikipedia.org/wiki/BibTe
 \begin{equation} \label{eq:example2}
     \cos{x} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots
 \end{equation}
+
+\section{参考になるサイト・書籍}
+
+\LaTeX は歴史の深いソフトウェアであるため、知りたいことの多くはネット検索で済む。
+日本語のサイトだと『TeX Wiki\footnote{\url{https://texwiki.texjp.org/}}』が特に参考になるだろう。
+また、奥村晴彦著の書籍『LaTeX2$\epsilon$美文書作成入門』は多くのユーザーに愛用されている。
 
 % bibファイル読み込み & Reference表示
 \bibliography{reference.bib}{}

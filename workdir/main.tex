@@ -12,6 +12,26 @@
 \usepackage{pxjahyper} % ハイパーリンク生成
 \usepackage{lmodern}  % Latine Modern 欧文フォントの見栄えを安定化
 \usepackage{secdot} % sectionのピリオドをカスタマイズ
+\usepackage{listings} % コードブロック
+% コードブロックの設定
+\renewcommand{\lstlistingname}{Program}
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
 
 % 著者表示をきれいに
 \renewcommand\Authsep{\quad}
@@ -108,7 +128,7 @@
 
 \subsection{表}
 次のように書くと、猫の生態を表で表せる。
-\verb+|c|r+の部分を編集すると、区切りの線や中央・左右揃えを設定できる。
+\lstinline{|c|r}の部分を編集すると、区切りの線や中央・左右揃えを設定できる。
 
 \begin{table}[tbh]
     \begin{center}
@@ -121,6 +141,18 @@
         \label{tab:table-name}
     \end{center}
 \end{table}
+
+\subsection{プログラムコード}
+
+\lstinline{print "Hello World"} のように書くと文中にプログラムコードを表示できる。
+また、次のプログラム\ref{fuga}のように書くと、複数行のプログラムコードを表示できる。
+オプション \lstinline{[caption=hoge,label=fuga]} の有無は任意。
+
+\begin{lstlisting}[caption=hoge,label=fuga]
+    void hello(){
+        printf("Hello world!");
+    }
+\end{lstlisting}
 
 \section{数式 \label{sec:equation}}
 

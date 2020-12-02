@@ -158,6 +158,63 @@
 \url{https://www.google.com/}のように書くとハイパーリンク付きURLを表示できる。
 また\href{https://www.bing.com/}{このように}書くことで文章にURLのリンクを付けることもできる。
 
+\section{引用論文}
+
+\LaTeX ではBibTeXという機能で参考資料を管理できる。
+この機能を用いることで、一般的な文章作成ソフトでは煩雑な参考文献の管理を簡単かつ機能的にできる。
+この節では、BibTeXの設定方法について述べる。
+
+\subsection{bibファイルの設定}
+\lstinline{.tex}ファイルと同一の階層に\lstinline{.bib}ファイルを作成する。
+\lstinline{.bib}ファイルは参考文献のリストを書いていく。
+以下は\lstinline{.bib}ファイルに書く内容の一例である。
+
+\begin{lstlisting}
+@article{einstein1935can,
+  title     = {Can quantum-mechanical description of physical reality be considered complete?},
+  author    = {Einstein, Albert and Podolsky, Boris and Rosen, Nathan},
+  journal   = {Physical review},
+  volume    = {47},
+  number    = {10},
+  pages     = {777},
+  year      = {1935},
+  publisher = {APS}
+}
+\end{lstlisting}
+
+\verb+@article{...}+ で囲まれたもの1つで、1つの文献を管理する。
+論文以外の文献の種類を扱いたい場合、\lstinline{@article}以外の設定をすれば良い。
+BiBTeXで扱える文献の種類は、\href{https://ja.wikipedia.org/wiki/BibTeX#%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA%E7%A8%AE%E5%88%A5}{Wikipedia}が参考になる。
+
+文献の詳細は \verb+@article{...}+ の内側に書かれた各パラメータに記述する。
+書き方については同じく、\href{https://ja.wikipedia.org/wiki/BibTeX#%E6%9B%B8%E8%AA%8C%E6%83%85%E5%A0%B1%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB}{Wikipedia}が参考になる。
+
+また、論文検索サービス『Google Scholar\footnote{\url{https://scholar.google.com/}}』はBibTeXをサポートしている。
+この機能を利用することで、知りたい論文を手早く\lstinline{.bib}ファイルに取り込める。
+検索結果の下側にある引用符マーク(\lstinline{"})をクリックし、そこからBibTeXを選べば、BibTeXにそのままコピー＆ペーストできるデータを入手できる。
+
+\subsection{参考文献の一覧を表示}
+\lstinline{.tex}ファイルの最後( \verb+\end{document}+ の一つ前の行あたり)に以下のように書くと、本文中に引用した文献の一覧が表示される。
+なお、本文中で文献を引用する方法は\ref{sec:call_bib}節で述べる。
+
+\begin{lstlisting}
+    \bibliography{ファイル名.bib}{}
+    \bibliographystyle{junsrt}
+\end{lstlisting}
+
+\verb+\bibliographystyle{...}+で表示スタイルを指定できる。
+\verb+\bibliographystyle{junsrt}+ならば、引用の早い順で表示される。
+詳細は\href{https://ja.overleaf.com/learn/latex/Bibtex_bibliography_styles}{こちらのサイト}を参考にするとよい。
+
+\subsection{参考文献の呼び出し \label{sec:call_bib}}
+\lstinline{.bib}ファイルに登録した参考文献を引用したい場合は、文中で\verb+\cite{einstein1935can}+などと書けば、このように表示される\cite{einstein1935can}。
+\verb+\cite{...}+ で指定する名前は \lstinline{.bib} ファイルの各文献1行目にある名前で識別している。
+
+\begin{lstlisting}
+    @article{einstein1935can,  ←これ
+      title     = {Can quantum-mechanical description of physical reality be considered complete?},
+\end{lstlisting}
+
 \section{数式 \label{sec:equation}}
 
 LaTeXは科学論文に用いられているという背景から、数式の表示には豊富な機能を持っている。

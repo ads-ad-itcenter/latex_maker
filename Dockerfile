@@ -10,11 +10,12 @@ RUN apt-get update && apt-get install -y \
     evince \
     texlive-lang-cjk \
     texlive-extra-utils \
+    texlive-latex-extra \
+    texlive-fonts-extra \
     latexmk \
     language-pack-ja \
     wget \
     xzdec \
-    texlive-latex-extra \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 

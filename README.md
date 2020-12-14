@@ -8,19 +8,21 @@
 
 ### 環境準備
 
-1. dockerイメージのpull
+1. このリポジトリをcloneまたは[zipでダウンロード](https://github.com/ads-ad-itcenter/latex_maker/archive/master.zip)して展開
+
+2. dockerイメージのpull
     ```sh
     cd このディレクトリのパス
     docker-compose pull
     ```
 
-2. vscodeの拡張機能をインストール
+3. vscodeの拡張機能をインストール
     * [こちら](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)を開き、Installからインストール
 
 ### 起動
 
 1. このディレクトリをvscodeで開く  
-   以下のいずれかで開く
+   以下のいずれかの方法で開く
     * コマンドライン
       ```sh
       code このディレクトリのパス
@@ -29,7 +31,7 @@
     * フォルダを右クリックし「Codeで開く」
       
 2. コンテナをvscodeで開く  
-   以下のいずれかで開く
+   以下のいずれかの方法で開く
    * 1. vscodeの左下の `><` アイコンをクリック
      2. 「Remote-Containers: Reopen in Container」を選択
    * 1. vscode で `Ctrl` + `Shift` + `P` でコマンドパレットを開く
